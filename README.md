@@ -16,7 +16,7 @@ This project develops a secure sandbox for practicing web attack simulations and
 
 ## 📁 Repo structure (recommended)
 
-
+```
 cloud-soc-sandbox/
 ├── README.md # You are reading it
 ├── docker-compose.yml # quick dev stack (DVWA, juice-shop, grafana)
@@ -36,7 +36,7 @@ cloud-soc-sandbox/
 └── LICENSE
 
 
----
+```
 
 ## 🧭 Architecture (high-level)
 
