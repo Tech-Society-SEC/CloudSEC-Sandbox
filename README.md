@@ -40,7 +40,7 @@ cloud-soc-sandbox/
 
 ## 🧭 Architecture (high-level)
 
-```mermaid
+```
 flowchart LR
   A[Attacker VM (Parrot/Kali)] -->|HTTP, Recon, Exploits| B[Target Web Apps<br/>DVWA & JuiceShop]
   B -->|App & Web Logs| C[Filebeat (Log Forwarder)]
@@ -55,7 +55,7 @@ flowchart LR
 ```
 Save-as: docs/flow.mmd and render with Mermaid or use the PNG in docs/architecture.png.
 
-⚙️ Minimum viable environment (local)
+## ⚙️ Minimum viable environment (local)
 
 Host OS: Ubuntu 22.04 / 24.04 (target VM)
 
@@ -67,7 +67,7 @@ Disk: 40 GB free (SSD preferred)
 
 Tools: Docker & docker-compose, Git, Python3
 
-🧩 What you will build (deliverables)
+## 🧩 What you will build (deliverables)
 
 docker-compose.yml that easily brings up DVWA or Juice Shop + Grafana (dev proof).
 
@@ -79,7 +79,7 @@ Kibana/Grafana dashboards showing: top attacking IPs, suspicious requests, faile
 
 A short demo script that runs a reconnaissance step and a single SQLi or brute-force attempt and shows alert firing.
 
-⚡ Quickstart — local dev (DVWA + Grafana example)
+## ⚡ Quickstart — local dev (DVWA + Grafana example)
 
 This is a minimal demo to get something visible quickly on your machine (Ubuntu target VM).
 
@@ -150,19 +150,19 @@ Load these into Suricata (/etc/suricata/rules/local.rules) and restart Suricata.
 
 🔎 Example detection regex (Logstash / OpenSearch watcher or Kibana alert)
 
-SQLi pattern:
+## SQLi pattern:
 
 /(UNION\s+SELECT|OR\s+1=1|SELECT\s+\*.*FROM|--\s|\/\*|\bDROP\b)/i
 
 
-XSS pattern:
+## XSS pattern:
 
 /(<script\b|onerror=|onload=|javascript:)/i
 
 
 Brute-force (rule idea): if failed_auth_count >= 5 from same IP in 1 minute → raise alert.
 
-🧪 Attacker demo (safe, reproducible)
+## 🧪 Attacker demo (safe, reproducible)
 
 Place a demo attack script in scripts/demo/run-demo.sh:
 
@@ -181,7 +181,7 @@ Run from attacker VM or host with caution. Keep small and short.
 
 Capture logs & screenshots during the run for demo evidence.
 
-📊 Dashboard ideas (Kibana / Grafana)
+## 📊 Dashboard ideas (Kibana / Grafana)
 
 Overview panel: Total requests, Top 10 source IPs, Request rate (1m/5m)
 
@@ -191,7 +191,7 @@ Auth panel: Failed login attempts by IP & username
 
 Timeline: Attack timeline with request payload snippets (redact sensitive data)
 
-✅ Demo script (what to show in your review)
+## ✅ Demo script (what to show in your review)
 
 Start monitoring stack (OpenSearch/Kibana or Grafana + Suricata).
 
@@ -205,7 +205,7 @@ In kibana/grafana: show a panel where the SQLi pattern is visible & alert fired.
 
 Remediate quickly (block IP via ufw or fail2ban) and re-run to show mitigation.
 
-⚠️ Safety & Ethics (must include)
+## ⚠️ Safety & Ethics (must include)
 
 Only test on lab-owned VMs and containers. Do not target external services, cloud provider infra, or other users.
 
@@ -215,7 +215,7 @@ Use IP allowlists & temporary tunnels (ngrok with auth) if you must demo publicl
 
 Teardown and destroy public-facing instances after demo.
 
-🛠 Troubleshooting
+## 🛠 Troubleshooting
 
 If you don’t see logs in OpenSearch: check Filebeat logs: sudo journalctl -u filebeat -f
 
@@ -223,7 +223,7 @@ Suricata not detecting traffic? Ensure Suricata runs on the interface seeing the
 
 Docker container ports conflict? Stop conflicting services or change ports in docker-compose.yml.
 
-🧭 Next steps & extensions
+## 🧭 Next steps & extensions
 
 Add Wazuh for endpoint telemetry & pre-built detection rules.
 
@@ -233,7 +233,7 @@ Add automated remediation (playbook) — e.g., when alert triggers, run a script
 
 Replace minimal stack with a full ELK/OpenSearch cluster for more realistic volume.
 
-📚 Useful references & learning (local resources)
+## 📚 Useful references & learning (local resources)
 
 DVWA: https://github.com/digininja/DVWA
 
