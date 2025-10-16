@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔒 CloudSec Sandbox</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 20px; 
+        }
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        .header h1 { 
+            font-size: 3.5em; 
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .header p { 
+            font-size: 1.3em; 
+            opacity: 0.9;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .card:hover { transform: translateY(-5px); }
+        .card h3 {
+            color: #4f46e5;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .app-link {
+            display: inline-block;
+            background: linear-gradient(45deg, #4f46e5, #7c3aed);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        .app-link:hover {
+            background: linear-gradient(45deg, #3730a3, #5b21b6);
+            transform: scale(1.05);
+        }
+        .status {
+            background: #f0f9ff;
+            border-left: 4px solid #0ea5e9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔒 CloudSec Sandbox</h1>
+            <p>Professional Cybersecurity Testing Environment</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h3>🎯 DVWA</h3>
+                <p>Damn Vulnerable Web Application - PHP/MySQL web application with security vulnerabilities for testing.</p>
+                <p><strong>Features:</strong> SQL Injection, XSS, File Upload, Command Injection</p>
+                <a href="/DVWA/" class="app-link">Launch DVWA →</a>
+            </div>
+
+            <div class="card">
+                <h3>🧃 OWASP Juice Shop</h3>
+                <p>Modern vulnerable web application with OWASP Top 10 security risks. Perfect for security training.</p>
+                <p><strong>Features:</strong> Modern UI, Progressive challenges, Score tracking</p>
+                <a href="http://localhost:3000" class="app-link">Launch Juice Shop →</a>
+            </div>
+
+            <div class="card">
+                <h3>🛠️ Server Tools</h3>
+                <p>Access server management tools and system information for monitoring and configuration.</p>
+                <p><strong>Services:</strong> Apache2, MariaDB, UFW Firewall</p>
+                <a href="#" class="app-link" onclick="showServerInfo()">System Info →</a>
+            </div>
+        </div>
+
+        <div class="status">
+            <h3>📊 System Status</h3>
+            <p><strong>Web Server:</strong> Apache2 Active | <strong>Database:</strong> MariaDB Running | <strong>Security:</strong> UFW Enabled</p>
+            <p><strong>Server Time:</strong> <span id="time"></span> | <strong>Uptime:</strong> Check via terminal</p>
+        </div>
+
+        <div class="footer">
+            <p>⚠️ For Educational and Research Purposes Only</p>
+            <p>CloudSec Sandbox v1.0 | Ubuntu Server Environment</p>
+        </div>
+    </div>
+
+    <script>
+        function updateTime() {
+            document.getElementById('time').textContent = new Date().toLocaleString();
+        }
+        updateTime();
+        setInterval(updateTime, 1000);
+        
+        function showServerInfo() {
+            alert('Server Info:\n- Ubuntu Server\n- Apache2 Web Server\n- MariaDB Database\n- Access via SSH for details');
+        }
+    </script>
+</body>
+</html>
