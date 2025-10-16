@@ -1,4 +1,4 @@
-# 🎓 CloudSec Sandbox Learning Path
+# 🎓 CloudSoc Sandbox Learning Path
 
 ## Phase 1: Environment Setup ✅
 - [x] Apache2 web server configured
@@ -80,3 +80,4 @@
 
 ---
 **🎯 Goal: Complete comprehensive penetration testing assessment**
+
