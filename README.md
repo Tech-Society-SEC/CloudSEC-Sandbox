@@ -162,6 +162,7 @@ These illustrate the full detection → response → logging chain.
 This is a simplified but realistic representation of endpoint defense.
 
 📦 Folder Structure
+```
 project/
 │
 ├── docs/
@@ -174,7 +175,7 @@ project/
 │
 ├── SOC_Monitor.ps1
 └── README.md
-
+```
 ## 🔒 Limitations
 
 This is a demo and not a full EDR product.
