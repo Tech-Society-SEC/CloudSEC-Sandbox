@@ -1,4 +1,4 @@
-🛡️ SOC Defense Demo — Real-Time Endpoint Monitoring & Threat Response
+# 🛡️ SOC Defense Demo — Real-Time Endpoint Monitoring & Threat Response
 
 A lightweight security demonstration integrating Windows Defender with a custom SOC monitoring agent.
 
@@ -17,7 +17,7 @@ Malicious file → Detection → Alert → Automatic removal → Logging → Evi
 
 This provides a simple but effective view of what happens inside a Security Operations Center (SOC) during an endpoint threat event.
 
-🎯 Project Objectives
+## 🎯 Project Objectives
 
 Show how modern endpoints detect and respond to malware.
 
@@ -29,8 +29,8 @@ Capture system logs and evidence for analysis.
 
 Provide a clean visual workflow using screenshots.
 
-🧩 System Components
-1️⃣ Windows Defender (Built-in Antivirus)
+## 🧩 System Components
+## 1️⃣ Windows Defender (Built-in Antivirus)
 
 Used to detect malicious executables dropped into the system.
 Defender provides:
@@ -45,7 +45,7 @@ Event Viewer logs
 
 This acts as the primary malware detection engine.
 
-2️⃣ SOC Monitoring Agent (PowerShell Script)
+## 2️⃣ SOC Monitoring Agent (PowerShell Script)
 
 A custom script that performs:
 
@@ -64,7 +64,7 @@ C:\sandbox_logs\incident_log.txt
 
 This simulates how EDR tools (Endpoint Detection & Response) react in real systems.
 
-👨‍💻 PowerShell Monitoring Script
+## 👨‍💻 PowerShell Monitoring Script
 
 Features implemented:
 ✔ Real-time directory watching
@@ -127,7 +127,7 @@ while ($true) {
     Start-Sleep -Milliseconds 500
 }
 ```
-📸 Screenshots (Evidence of Workflow)
+## 📸 Screenshots (Evidence of Workflow)
 
 Stored in:
 
@@ -145,7 +145,7 @@ File	Description
 
 These illustrate the full detection → response → logging chain.
 
-🔄 End-to-End Attack Workflow
+## 🔄 End-to-End Attack Workflow
 [Malicious File Dropped]
             ↓
 [Windows Defender Detection]
@@ -175,7 +175,7 @@ project/
 ├── SOC_Monitor.ps1
 └── README.md
 
-🔒 Limitations
+## 🔒 Limitations
 
 This is a demo and not a full EDR product.
 Limitations include:
@@ -188,7 +188,7 @@ Single-folder monitoring
 
 Suitable only for educational use
 
-🚀 Future Improvements
+## 🚀 Future Improvements
 
 Potential enhancements:
 
@@ -204,7 +204,7 @@ Visual dashboard (Grafana)
 
 Convert script into a background Windows service
 
-📚 Purpose
+## 📚 Purpose
 
 This project is meant to serve as a learning tool for understanding:
 
