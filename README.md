@@ -6,8 +6,7 @@ This project develops a secure sandbox for practicing web attack simulations and
 ---
 
 ## 🚀 Quick highlights (elevator)
-- **Targets:** DVWA & OWASP Juice Shop (vulnerable web apps)  
-- **Attacker:** Parrot / Kali VM — runs scans & exploit tools (nmap, sqlmap, hydra)  
+- **Attacker:** Parrot / Kali VM — runs scans & exploit tools   
 - **Telemetry:** Filebeat (logs) + Suricata (network) → OpenSearch/Elasticsearch  
 - **Visualization:** Kibana or Grafana dashboards + alerting to Telegram/Slack  
 - **Goal:** Teach detection, alerting, investigation, and basic remediation in a safe lab
@@ -73,17 +72,6 @@ Disk: 40 GB free (SSD preferred)
 
 Tools: Docker & docker-compose, Git, Python3
 
-## 🧩 What you will build (deliverables)
-
-docker-compose.yml that easily brings up DVWA or Juice Shop + Grafana (dev proof).
-
-Filebeat config forwarding Apache logs to OpenSearch.
-
-Suricata with a few local rules to detect SQLi/XSS.
-
-Kibana/Grafana dashboards showing: top attacking IPs, suspicious requests, failed logins, injection patterns.
-
-A short demo script that runs a reconnaissance step and a single SQLi or brute-force attempt and shows alert firing.
 
 ## ⚡ Quickstart — local dev (DVWA + Grafana example)
 
@@ -156,17 +144,6 @@ Load these into Suricata (/etc/suricata/rules/local.rules) and restart Suricata.
 
 🔎 Example detection regex (Logstash / OpenSearch watcher or Kibana alert)
 
-## SQLi pattern:
-
-/(UNION\s+SELECT|OR\s+1=1|SELECT\s+\*.*FROM|--\s|\/\*|\bDROP\b)/i
-
-
-## XSS pattern:
-
-/(<script\b|onerror=|onload=|javascript:)/i
-
-
-Brute-force (rule idea): if failed_auth_count >= 5 from same IP in 1 minute → raise alert.
 
 ## 🧪 Attacker demo (safe, reproducible)
 
