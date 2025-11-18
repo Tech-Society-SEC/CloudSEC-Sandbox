@@ -18,42 +18,48 @@ This project develops a secure sandbox for practicing web attack simulations and
 
 ```
 cloud-soc-sandbox/
-├── README.md # You are reading it
-├── docker-compose.yml # quick dev stack (DVWA, juice-shop, grafana)
-├── .env.example # environment variables (tokens, endpoints)
-├── scripts/
-│ ├── attack/ # attacker scripts (nmap, sqlmap examples)
-│ └── demo/ # demo automation + replay scripts
-├── configs/
-│ ├── filebeat.yml # filebeat config (example)
-│ ├── suricata/
-│ │ └── local.rules # suricata demo rules
-│ └── logstash/ # optional logstash pipeline
-├── docs/
-│ ├── architecture.png
-│ ├── flow.mmd # mermaid / diagram source
-│ └── demo_steps.md
-└── LICENSE
+C:.
+│   .gitignore
+│   README.md
+│
+├───docs
+│   │   offline-installation.md
+│   │   SOC_Report.md
+│   │
+│   └───screenshots
+│           1SOC_monitor.png
+│           2SOC_alert.png
+│           3Protection_history.png
+│           4Defender_log.png
+│           5SOC_log.png
+│
+├───logs
+├───scripts
+│   └───windows
+│           monitor.ps1
+│
+└───tools
+    ├───kali-debs
+    │       libgcrypt20_1.11.2-2_amd64.deb
+    │       libgpg-error0_1.55-2_amd64.deb
+    │       libwireshark-data_4.4.9-1_all.deb
+    │       libwireshark18_4.4.9-1_amd64.deb
+    │       libwiretap15_4.4.9-1_amd64.deb
+    │       libwsutil16_4.4.9-1_amd64.deb
+    │       offline-tools-kali.iso
+    │       offline-tools-new.iso
+    │       offline-tools.iso
+    │       Packages.gz
+    │       suricata-8.0.2.tar.gz
+    │       tshark_4.4.9-1_amd64.deb
+    │       wireshark-common_4.4.9-1_amd64.deb
+    │
+    ├───sample-apps
+    ├───scripts
+    └───windows-portable
 
 
 ```
-
-## 🧭 Architecture (high-level)
-
-```
-flowchart LR
-  A[Attacker VM (Parrot/Kali)] -->|HTTP, Recon, Exploits| B[Target Web Apps<br/>DVWA & JuiceShop]
-  B -->|App & Web Logs| C[Filebeat (Log Forwarder)]
-  B -->|Network Packets| D[Suricata (IDS)]
-  C --> E[OpenSearch/Elasticsearch]
-  D --> E
-  E --> F[Kibana / Grafana Dashboards]
-  F --> G[Alerting: Telegram / Slack / Email]
-  G --> H[Learner / Analyst]
-  H -->|Rule tuning| C
-
-```
-Save-as: docs/flow.mmd and render with Mermaid or use the PNG in docs/architecture.png.
 
 ## ⚙️ Minimum viable environment (local)
 
