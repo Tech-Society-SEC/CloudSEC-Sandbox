@@ -1,7 +1,7 @@
 # 🛡️ Cloud Security Sandbox — Mini SOC for Learners
 
 **Abstract.**  
-This project develops a secure sandbox for practicing web attack simulations and defensive monitoring. An Ubuntu server hosts intentionally vulnerable applications (DVWA, OWASP Juice Shop), while a Parrot/Kali VM generates controlled attacks such as SQL injection, XSS, and brute-force. Logs and network traffic are collected via Filebeat and Suricata, analyzed in Elasticsearch/OpenSearch, and visualized with Kibana/Grafana. Dashboards track attack patterns and alerts are sent to Telegram/Slack. The setup enables safe, hands-on learning of web security, detection, and response in a controlled environment.
+This project aims to establish a real-time malware detection and response system within a secure sandbox environment, enhancing security practices and providing valuable training opportunities for SOC professionals.
 
 ---
 
