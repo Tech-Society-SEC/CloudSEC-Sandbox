@@ -1,13 +1,13 @@
-# SOC Defense Demo
-This project includes a SOC monitoring and defense demonstration using Windows Defender and a custom SOC PowerShell monitor.
+## SOC Defense Demo
 
-- Screenshots show step-by-step detection:
+This project includes a **SOC monitoring and defense demonstration** using Windows Defender and a custom SOC PowerShell monitor.  
 
-SOC monitor running
-Malware alert triggered
-Protection history confirmation
-Event Viewer logs
-SOC incident log
-- All screenshots are located in: docs/screenshots/
+- **Screenshots** show step-by-step detection:
+  1. SOC monitor running
+  2. Malware alert triggered
+  3. Protection history confirmation
+  4. Event Viewer logs
+  5. SOC incident log  
 
-- This demonstrates a full attack → detection → defense → logging workflow.
+- All screenshots are located in: `docs/screenshots/`  
+- This demonstrates a **full attack → detection → defense → logging workflow**.
